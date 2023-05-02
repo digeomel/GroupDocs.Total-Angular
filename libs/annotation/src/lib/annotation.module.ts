@@ -35,43 +35,40 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
 }
 
 @NgModule({
-  declarations: [AnnotationAppComponent, AnnotationComponent, CommentPanelComponent, CommentComponent, CreateCommentComponent,
-  ],
-  exports: [CommonComponentsModule, AnnotationAppComponent, AnnotationComponent, CommentPanelComponent, CommentComponent, CreateCommentComponent],
-  imports:
-    [CommonModule,
-      CommonComponentsModule,
-      HttpClientModule,
-      FontAwesomeModule,
-      ClickOutsideModule,
-      TranslateModule.forRoot()
+    declarations: [AnnotationAppComponent, AnnotationComponent, CommentPanelComponent, CommentComponent, CreateCommentComponent,
     ],
-  providers:
-    [
-      ConfigService,
-      AnnotationConfigService,
-      ActiveAnnotationService,
-      RemoveAnnotationService,
-      CommentAnnotationService,
-      {
-        provide: HTTP_INTERCEPTORS,
-        useClass: ErrorInterceptorService,
-        multi: true
-      },
-      {
-        provide: APP_INITIALIZER,
-        useFactory: initializeApp,
-        deps: [AnnotationConfigService], multi: true
-      },
-      LoadingMaskService,
-      {
-        provide: HTTP_INTERCEPTORS,
-        useFactory: setupLoadingInterceptor,
-        multi: true,
-        deps: [LoadingMaskService]
-      }
+    exports: [CommonComponentsModule, AnnotationAppComponent, AnnotationComponent, CommentPanelComponent, CommentComponent, CreateCommentComponent],
+    imports: [CommonModule,
+        CommonComponentsModule,
+        HttpClientModule,
+        FontAwesomeModule,
+        ClickOutsideModule,
+        TranslateModule.forRoot()
     ],
-  entryComponents: [AnnotationComponent],
+    providers: [
+        ConfigService,
+        AnnotationConfigService,
+        ActiveAnnotationService,
+        RemoveAnnotationService,
+        CommentAnnotationService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ErrorInterceptorService,
+            multi: true
+        },
+        {
+            provide: APP_INITIALIZER,
+            useFactory: initializeApp,
+            deps: [AnnotationConfigService], multi: true
+        },
+        LoadingMaskService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useFactory: setupLoadingInterceptor,
+            multi: true,
+            deps: [LoadingMaskService]
+        }
+    ]
 })
 
 export class AnnotationModule {

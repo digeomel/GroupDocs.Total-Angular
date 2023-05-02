@@ -50,74 +50,70 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
 }
 
 @NgModule({
-  declarations: [SignatureAppComponent,
-    SignatureListPanelComponent,
-    NewBarQrCodeComponent,
-    UploadSignatureComponent,
-    DndSignatureDirective,
-    Signature,
-    CanvasComponent,
-    StampCanvasComponent,
-    SignatureLeftPanelComponent,
-    HandModalComponent,
-    StampModalComponent
-  ],
-  exports: [SignatureAppComponent,
-    SignatureListPanelComponent,
-    NewBarQrCodeComponent,
-    UploadSignatureComponent,
-    DndSignatureDirective,
-    Signature,
-    CanvasComponent,
-    StampCanvasComponent,
-    SignatureLeftPanelComponent,
-    HandModalComponent,
-    StampModalComponent,
-    CommonComponentsModule
-  ],
-  imports: [CommonModule,
-    CommonComponentsModule,
-    HttpClientModule,
-    FontAwesomeModule,
-    ClickOutsideModule,
-    TranslateModule.forRoot()
-  ],
-  providers: [
-    SignatureService,
-    ConfigService,
-    SignatureConfigService,
-    SelectSignatureService,
-    DragSignatureService,
-    RemoveSignatureService,
-    ActiveSignatureService,
-    ActiveCanvasService,
-    RemoveCanvasService,
-    DatePipe,
-    SignaturesHolderService,
-    SignatureTabActivatorService,
-    CopySignatureService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ErrorInterceptorService,
-      multi: true
-    },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeApp,
-      deps: [SignatureConfigService], multi: true
-    },
-    LoadingMaskService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useFactory: setupLoadingInterceptor,
-      multi: true,
-      deps: [LoadingMaskService]
-    }
-  ],
-  entryComponents: [
-    Signature,
-    StampCanvasComponent
-  ]
+    declarations: [SignatureAppComponent,
+        SignatureListPanelComponent,
+        NewBarQrCodeComponent,
+        UploadSignatureComponent,
+        DndSignatureDirective,
+        Signature,
+        CanvasComponent,
+        StampCanvasComponent,
+        SignatureLeftPanelComponent,
+        HandModalComponent,
+        StampModalComponent
+    ],
+    exports: [SignatureAppComponent,
+        SignatureListPanelComponent,
+        NewBarQrCodeComponent,
+        UploadSignatureComponent,
+        DndSignatureDirective,
+        Signature,
+        CanvasComponent,
+        StampCanvasComponent,
+        SignatureLeftPanelComponent,
+        HandModalComponent,
+        StampModalComponent,
+        CommonComponentsModule
+    ],
+    imports: [CommonModule,
+        CommonComponentsModule,
+        HttpClientModule,
+        FontAwesomeModule,
+        ClickOutsideModule,
+        TranslateModule.forRoot()
+    ],
+    providers: [
+        SignatureService,
+        ConfigService,
+        SignatureConfigService,
+        SelectSignatureService,
+        DragSignatureService,
+        RemoveSignatureService,
+        ActiveSignatureService,
+        ActiveCanvasService,
+        RemoveCanvasService,
+        DatePipe,
+        SignaturesHolderService,
+        SignatureTabActivatorService,
+        CopySignatureService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ErrorInterceptorService,
+            multi: true
+        },
+        {
+            provide: APP_INITIALIZER,
+            useFactory: initializeApp,
+            deps: [SignatureConfigService], multi: true
+        },
+        LoadingMaskService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useFactory: setupLoadingInterceptor,
+            multi: true,
+            deps: [LoadingMaskService]
+        }
+    ]
 })
 export class SignatureModule {
   constructor() {

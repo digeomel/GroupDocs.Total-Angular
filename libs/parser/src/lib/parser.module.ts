@@ -36,55 +36,53 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
 }
 
 @NgModule({
-  declarations: [
-    ParserAppComponent,
-    SurfaceComponent,
-    FieldComponent,
-    ConfirmationModalComponent,
-    SidePanelComponent,
-    RenameModalComponent,
-    PlaceholderComponent,
-    TableViewerComponent  
-  ],
-  imports: [
-    BrowserModule,
-    CommonComponentsModule, 
-    HttpClientModule,
-    ClickOutsideModule,
-    FontAwesomeModule
-  ],  
-  exports: [ 
-    ParserAppComponent,
-    FieldComponent,
-    CommonComponentsModule,
-    SurfaceComponent,
-    SidePanelComponent
-  ],
-  providers: [ 
-    ParserService,
-    ConfigService,
-    ExceptionMessageService,
-    ParserConfigService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ErrorInterceptorService,
-      multi: true
-    },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeApp,
-      deps: [ParserConfigService], multi: true
-    },
-    LoadingMaskService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useFactory: setupLoadingInterceptor,
-      multi: true,
-      deps: [LoadingMaskService]
-    }
-  ],
-
-  entryComponents: [ FieldComponent ],
+    declarations: [
+        ParserAppComponent,
+        SurfaceComponent,
+        FieldComponent,
+        ConfirmationModalComponent,
+        SidePanelComponent,
+        RenameModalComponent,
+        PlaceholderComponent,
+        TableViewerComponent
+    ],
+    imports: [
+        BrowserModule,
+        CommonComponentsModule,
+        HttpClientModule,
+        ClickOutsideModule,
+        FontAwesomeModule
+    ],
+    exports: [
+        ParserAppComponent,
+        FieldComponent,
+        CommonComponentsModule,
+        SurfaceComponent,
+        SidePanelComponent
+    ],
+    providers: [
+        ParserService,
+        ConfigService,
+        ExceptionMessageService,
+        ParserConfigService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ErrorInterceptorService,
+            multi: true
+        },
+        {
+            provide: APP_INITIALIZER,
+            useFactory: initializeApp,
+            deps: [ParserConfigService], multi: true
+        },
+        LoadingMaskService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useFactory: setupLoadingInterceptor,
+            multi: true,
+            deps: [LoadingMaskService]
+        }
+    ]
 })
 export class ParserModule { 
   constructor() {
