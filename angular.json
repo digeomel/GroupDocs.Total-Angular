@@ -453,7 +453,9 @@
     "warnings": {
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/angular"
+    "schematicCollections": [
+      "@nrwl/angular"
+    ]
   },
   "schematics": {
     "@nrwl/angular:application": {
@@ -463,6 +465,5 @@
     "@nrwl/angular:library": {
       "unitTestRunner": "karma"
     }
-  },
-  "defaultProject": "total-angular"
+  }
 }
