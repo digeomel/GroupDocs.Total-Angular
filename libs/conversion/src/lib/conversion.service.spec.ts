@@ -10,7 +10,7 @@ describe('СonversionService', () => {
   }));
 
   it('should be created', () => {
-    const service: ConversionService = TestBed.get(ConversionService);
+    const service: ConversionService = TestBed.inject(ConversionService);
     expect(service).toBeTruthy();
   });
 });

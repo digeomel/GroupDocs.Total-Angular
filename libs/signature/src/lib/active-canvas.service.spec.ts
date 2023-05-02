@@ -6,7 +6,7 @@ describe('ActiveCanvasService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ActiveCanvasService = TestBed.get(ActiveCanvasService);
+    const service: ActiveCanvasService = TestBed.inject(ActiveCanvasService);
     expect(service).toBeTruthy();
   });
 });

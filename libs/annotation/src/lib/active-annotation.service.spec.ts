@@ -6,7 +6,7 @@ describe('ActiveAnnotationService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ActiveAnnotationService = TestBed.get(ActiveAnnotationService);
+    const service: ActiveAnnotationService = TestBed.inject(ActiveAnnotationService);
     expect(service).toBeTruthy();
   });
 });

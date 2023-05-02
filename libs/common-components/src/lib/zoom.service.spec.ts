@@ -6,7 +6,7 @@ describe('ZoomService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ZoomService = TestBed.get(ZoomService);
+    const service: ZoomService = TestBed.inject(ZoomService);
     expect(service).toBeTruthy();
   });
 });

@@ -6,7 +6,7 @@ describe('SignatureTabActivatorService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: SignatureTabActivatorService = TestBed.get(SignatureTabActivatorService);
+    const service: SignatureTabActivatorService = TestBed.inject(SignatureTabActivatorService);
     expect(service).toBeTruthy();
   });
 });

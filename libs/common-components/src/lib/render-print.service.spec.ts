@@ -6,7 +6,7 @@ describe('RenderPrintService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RenderPrintService = TestBed.get(RenderPrintService);
+    const service: RenderPrintService = TestBed.inject(RenderPrintService);
     expect(service).toBeTruthy();
   });
 });

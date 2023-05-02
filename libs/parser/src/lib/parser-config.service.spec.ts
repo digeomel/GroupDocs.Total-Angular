@@ -6,7 +6,7 @@ describe('ParserConfigService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ParserConfigService = TestBed.get(ParserConfigService);
+    const service: ParserConfigService = TestBed.inject(ParserConfigService);
     expect(service).toBeTruthy();
   });
 });

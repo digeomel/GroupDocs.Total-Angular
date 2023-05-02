@@ -6,7 +6,7 @@ describe('RemoveAnnotationService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RemoveAnnotationService = TestBed.get(RemoveAnnotationService);
+    const service: RemoveAnnotationService = TestBed.inject(RemoveAnnotationService);
     expect(service).toBeTruthy();
   });
 });

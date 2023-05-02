@@ -6,7 +6,7 @@ describe('SignaturesHolderService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: SignaturesHolderService = TestBed.get(SignaturesHolderService);
+    const service: SignaturesHolderService = TestBed.inject(SignaturesHolderService);
     expect(service).toBeTruthy();
   });
 });

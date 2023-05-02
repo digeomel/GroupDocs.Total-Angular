@@ -6,7 +6,7 @@ describe('RemoveCanvasService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RemoveCanvasService = TestBed.get(RemoveCanvasService);
+    const service: RemoveCanvasService = TestBed.inject(RemoveCanvasService);
     expect(service).toBeTruthy();
   });
 });

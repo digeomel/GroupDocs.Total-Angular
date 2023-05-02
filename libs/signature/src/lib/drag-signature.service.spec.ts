@@ -6,7 +6,7 @@ describe('DragSignatureService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: DragSignatureService = TestBed.get(DragSignatureService);
+    const service: DragSignatureService = TestBed.inject(DragSignatureService);
     expect(service).toBeTruthy();
   });
 });

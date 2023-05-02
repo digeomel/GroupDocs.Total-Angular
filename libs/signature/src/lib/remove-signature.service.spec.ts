@@ -6,7 +6,7 @@ describe('RemoveSignagtureService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RemoveSignagtureService = TestBed.get(RemoveSignagtureService);
+    const service: RemoveSignagtureService = TestBed.inject(RemoveSignagtureService);
     expect(service).toBeTruthy();
   });
 });

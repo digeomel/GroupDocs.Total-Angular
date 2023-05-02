@@ -10,7 +10,7 @@ describe('ConversionConfigService', () => {
   }));
 
   it('should be created', () => {
-    const service: ConversionConfigService = TestBed.get(ConversionConfigService);
+    const service: ConversionConfigService = TestBed.inject(ConversionConfigService);
     expect(service).toBeTruthy();
   });
 });

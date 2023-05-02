@@ -6,7 +6,7 @@ describe('PlaceholderService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: PlaceholderService = TestBed.get(PlaceholderService);
+    const service: PlaceholderService = TestBed.inject(PlaceholderService);
     expect(service).toBeTruthy();
   });
 });

@@ -6,7 +6,7 @@ describe('TopTabActivatorService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: TopTabActivatorService = TestBed.get(TopTabActivatorService);
+    const service: TopTabActivatorService = TestBed.inject(TopTabActivatorService);
     expect(service).toBeTruthy();
   });
 });

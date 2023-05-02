@@ -6,7 +6,7 @@ describe('AddDynamicComponentService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AddDynamicComponentService = TestBed.get(AddDynamicComponentService);
+    const service: AddDynamicComponentService = TestBed.inject(AddDynamicComponentService);
     expect(service).toBeTruthy();
   });
 });

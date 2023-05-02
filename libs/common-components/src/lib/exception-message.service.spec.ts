@@ -6,7 +6,7 @@ describe('ExceptionMessageService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ExceptionMessageService = TestBed.get(ExceptionMessageService);
+    const service: ExceptionMessageService = TestBed.inject(ExceptionMessageService);
     expect(service).toBeTruthy();
   });
 });

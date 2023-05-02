@@ -6,7 +6,7 @@ describe('SourceFileService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: SourceFileService = TestBed.get(SourceFileService);
+    const service: SourceFileService = TestBed.inject(SourceFileService);
     expect(service).toBeTruthy();
   });
 });

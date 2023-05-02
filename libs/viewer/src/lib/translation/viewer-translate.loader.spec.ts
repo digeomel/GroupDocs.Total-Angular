@@ -6,7 +6,7 @@ describe('ViewerTranslateLoader', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ViewerTranslateLoader = TestBed.get(ViewerTranslateLoader);
+    const service: ViewerTranslateLoader = TestBed.inject(ViewerTranslateLoader);
     expect(service).toBeTruthy();
   });
 });

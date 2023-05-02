@@ -6,7 +6,7 @@ describe('TabActivatorService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: TabActivatorService = TestBed.get(TabActivatorService);
+    const service: TabActivatorService = TestBed.inject(TabActivatorService);
     expect(service).toBeTruthy();
   });
 });

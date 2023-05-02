@@ -6,7 +6,7 @@ describe('CommonTranslateLoader', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: CommonTranslateLoader = TestBed.get(CommonTranslateLoader);
+    const service: CommonTranslateLoader = TestBed.inject(CommonTranslateLoader);
     expect(service).toBeTruthy();
   });
 });

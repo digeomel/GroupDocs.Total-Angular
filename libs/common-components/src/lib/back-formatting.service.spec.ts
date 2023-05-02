@@ -6,7 +6,7 @@ describe('BackFormattingService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: BackFormattingService = TestBed.get(BackFormattingService);
+    const service: BackFormattingService = TestBed.inject(BackFormattingService);
     expect(service).toBeTruthy();
   });
 });
