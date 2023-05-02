@@ -73,7 +73,7 @@ export class EditorModule {
   constructor(){
     library.add(fas,far);
   }
-  static forRoot(apiEndpoint : string): ModuleWithProviders {
+  static forRoot(apiEndpoint : string): ModuleWithProviders<EditorModule> {
     Api.DEFAULT_API_ENDPOINT = apiEndpoint
     return {
       ngModule: EditorModule

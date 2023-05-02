@@ -1,5 +1,7 @@
 import {Observable, Subject} from "rxjs";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class ActiveAnnotationService {
   private _observer: Subject<number> = new Subject();
   private readonly _activeChange: Observable<number> = this._observer.asObservable();

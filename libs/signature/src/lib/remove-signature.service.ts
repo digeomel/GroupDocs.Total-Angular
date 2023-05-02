@@ -1,6 +1,8 @@
 import {Observable, Subject} from "rxjs";
 import {RemoveSign} from "./signature-models";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class RemoveSignatureService {
   private _observer: Subject<RemoveSign> = new Subject();
   private readonly _removeSignature: Observable<RemoveSign> = this._observer.asObservable();

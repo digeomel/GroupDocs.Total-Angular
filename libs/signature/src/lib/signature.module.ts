@@ -124,7 +124,7 @@ export class SignatureModule {
     library.add(fas, far);
   }
 
-  static forRoot(apiEndpoint: string): ModuleWithProviders {
+  static forRoot(apiEndpoint: string): ModuleWithProviders<SignatureModule> {
     Api.DEFAULT_API_ENDPOINT = apiEndpoint;
     return {
       ngModule: SignatureModule

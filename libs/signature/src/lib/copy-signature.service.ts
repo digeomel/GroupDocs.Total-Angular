@@ -1,6 +1,8 @@
 import {Observable, Subject} from "rxjs";
 import {CopyChanges, CopySign} from "./signature-models";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class CopySignatureService {
   private _observer: Subject<CopySign> = new Subject();
   private readonly _copySignature: Observable<CopySign> = this._observer.asObservable();

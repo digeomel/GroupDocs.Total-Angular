@@ -1,4 +1,5 @@
 import {Observable, Subject} from "rxjs";
+import { Injectable } from "@angular/core";
 
 export class Formatting {
   constructor(fontSize: number, color: string, bgColor: string, bold: boolean, italic: boolean, underline: boolean, font: string, strikeout: boolean, align: string, list: string) {
@@ -30,6 +31,7 @@ export class Formatting {
   }
 }
 
+@Injectable()
 export class FormattingService {
   private _observerBold: Subject<boolean> = new Subject();
   private readonly _formatBoldChange: Observable<boolean> = this._observerBold.asObservable();

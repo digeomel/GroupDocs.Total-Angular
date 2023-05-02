@@ -97,7 +97,7 @@ export class ComparisonModule {
     library.add(fas, far);
   }
 
-  static forRoot(apiEndpoint: string): ModuleWithProviders {
+  static forRoot(apiEndpoint: string): ModuleWithProviders<ComparisonModule> {
     Api.DEFAULT_API_ENDPOINT = apiEndpoint;
     return {
       ngModule: ComparisonModule

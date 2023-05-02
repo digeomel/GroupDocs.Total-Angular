@@ -1,5 +1,7 @@
 import {Observable, Observer} from "rxjs";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class PagePreloadService {
   private readonly _checkPreload: Observable<number>;
   private _observer: Observer<number>;

@@ -1,6 +1,8 @@
 import {Observable, Subject} from "rxjs";
 import {RemoveAnnotation} from "./annotation-models";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class RemoveAnnotationService {
   private _observer: Subject<RemoveAnnotation> = new Subject();
   private readonly _removeAnnotation: Observable<RemoveAnnotation> = this._observer.asObservable();

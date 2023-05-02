@@ -1,3 +1,4 @@
+import { Injectable } from "@angular/core";
 export class CommonModals {
   static PasswordRequired = "gd-password-required";
   static ErrorMessage = "gd-error-message";
@@ -9,6 +10,7 @@ export class CommonModals {
   static InformationMessage = "gd-information-message";
 }
 
+@Injectable()
 export class ModalService {
   private modals: any[] = [];
 

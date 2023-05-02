@@ -1,3 +1,4 @@
+import { Injectable } from "@angular/core";
 export class PageModel {
   data: string;
   angle: number;
@@ -56,6 +57,7 @@ export class FileDescription {
   searchTerm?: string | null;
 }
 
+@Injectable()
 export class FileModel {
   guid: string;
   name: string;
@@ -74,6 +76,7 @@ export class HttpError {
   static InternalServerError = 500;
 }
 
+@Injectable()
 export class Utils {
   public static getMousePosition(event) {
     const mouse = {
@@ -135,6 +138,7 @@ export class Utils {
   }
 }
 
+@Injectable()
 export class FileUtil {
   public static map = {
     'folder': {'format': '', 'icon': 'folder'},
@@ -228,6 +232,7 @@ export class FileUtil {
   }
 }
 
+@Injectable()
 export class FileService {
 
   constructor() {

@@ -1,6 +1,8 @@
 import {Observable, Observer} from "rxjs";
 import {PageModel} from "./file.service";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class RenderPrintService {
   private _render: Observable<PageModel[]>;
   private _observer: Observer<PageModel[]>;

@@ -91,7 +91,7 @@ export class ParserModule {
     library.add(fas, far);
   }
 
-  static forRoot(apiEndpoint: string): ModuleWithProviders {
+  static forRoot(apiEndpoint: string): ModuleWithProviders<ParserModule> {
     Api.DEFAULT_API_ENDPOINT = apiEndpoint;
     return {
       ngModule: ParserModule

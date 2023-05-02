@@ -1,5 +1,7 @@
 import {HostDynamicDirective} from "./host-dynamic.directive";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class HostingDynamicComponentService {
   private hosts: HostDynamicDirective[];
 

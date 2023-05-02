@@ -84,7 +84,7 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
   ]
 })
 export class MetadataModule {
-  static forRoot(apiEndpoint : string): ModuleWithProviders {
+  static forRoot(apiEndpoint : string): ModuleWithProviders<MetadataModule> {
     Api.DEFAULT_API_ENDPOINT = apiEndpoint
     return {
       ngModule: MetadataModule

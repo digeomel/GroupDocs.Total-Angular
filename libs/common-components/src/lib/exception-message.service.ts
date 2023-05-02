@@ -1,6 +1,8 @@
 import { HttpEvent } from "@angular/common/http";
 import {BehaviorSubject, Observable} from "rxjs";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class ExceptionMessageService {
   private _observer: BehaviorSubject<string> = new BehaviorSubject('Server is not available');
   private _messageChange: Observable<string> = this._observer.asObservable();

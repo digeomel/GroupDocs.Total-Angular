@@ -1,5 +1,7 @@
 import {Observable, Observer} from "rxjs";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class UploadFilesService {
   private _uploadsChange: Observable<FileList>;
   private _observer: Observer<FileList>;

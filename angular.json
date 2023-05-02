@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/apps/total-angular",
             "index": "apps/total-angular/src/index.html",
             "main": "apps/total-angular/src/main.ts",
@@ -53,6 +54,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -144,7 +149,12 @@
             "tsConfig": "libs/viewer/tsconfig.lib.json",
             "project": "libs/viewer/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "libs/viewer/tsconfig.lib.prod.json"
+            }
+          }
+},
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -185,7 +195,12 @@
             "tsConfig": "libs/common-components/tsconfig.lib.json",
             "project": "libs/common-components/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "libs/common-components/tsconfig.lib.prod.json"
+            }
+          }
+},
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -226,7 +241,12 @@
             "tsConfig": "libs/search/tsconfig.lib.json",
             "project": "libs/search/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "libs/search/tsconfig.lib.prod.json"
+            }
+          }
+},
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -264,7 +284,12 @@
             "tsConfig": "libs/editor/tsconfig.lib.json",
             "project": "libs/editor/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "libs/editor/tsconfig.lib.prod.json"
+            }
+          }
+},
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -305,7 +330,12 @@
             "tsConfig": "libs/comparison/tsconfig.lib.json",
             "project": "libs/comparison/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "libs/comparison/tsconfig.lib.prod.json"
+            }
+          }
+},
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -346,7 +376,12 @@
             "tsConfig": "libs/signature/tsconfig.lib.json",
             "project": "libs/signature/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "libs/signature/tsconfig.lib.prod.json"
+            }
+          }
+},
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -387,7 +422,12 @@
             "tsConfig": "libs/conversion/tsconfig.lib.json",
             "project": "libs/conversion/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "libs/conversion/tsconfig.lib.prod.json"
+            }
+          }
+},
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -428,7 +468,12 @@
             "tsConfig": "libs/annotation/tsconfig.lib.json",
             "project": "libs/annotation/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "libs/annotation/tsconfig.lib.prod.json"
+            }
+          }
+},
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -469,7 +514,12 @@
             "tsConfig": "libs/metadata/tsconfig.lib.json",
             "project": "libs/metadata/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "libs/metadata/tsconfig.lib.prod.json"
+            }
+          }
+},
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -507,7 +557,12 @@
             "tsConfig": "libs/parser/tsconfig.lib.json",
             "project": "libs/parser/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "libs/parser/tsconfig.lib.prod.json"
+            }
+          }
+},
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {

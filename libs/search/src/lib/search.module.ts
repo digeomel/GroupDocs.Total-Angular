@@ -82,7 +82,7 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
   ]
 })
 export class SearchModule {
-  static forRoot(apiEndpoint: string): ModuleWithProviders {
+  static forRoot(apiEndpoint: string): ModuleWithProviders<SearchModule> {
     Api.DEFAULT_API_ENDPOINT = apiEndpoint;
     return {
       ngModule: SearchModule

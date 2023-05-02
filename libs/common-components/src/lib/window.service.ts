@@ -1,9 +1,11 @@
 import {fromEvent, Observable, Subject} from "rxjs";
 import {debounceTime, distinctUntilChanged, startWith, tap} from "rxjs/operators";
+import { Injectable } from "@angular/core";
 
 const MOBILE_MAX_WIDTH = 425;
 const TABLET_MAX_WIDTH = 1024;
 
+@Injectable()
 export class WindowService {
 
   private resizeSubject: Subject<Window> = new Subject();

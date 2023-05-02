@@ -1,5 +1,7 @@
 import {Observable, Subject} from "rxjs";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class SearchService {
   private _observer: Subject<string> = new Subject();
   private readonly _textChange: Observable<string> = this._observer.asObservable();

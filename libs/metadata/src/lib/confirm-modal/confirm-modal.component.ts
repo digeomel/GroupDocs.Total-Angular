@@ -12,7 +12,7 @@ import { ModalComponent, ButtonComponent } from "@groupdocs.examples.angular/com
     @Input() text: string;
     @Output() confirm = new EventEmitter();
     @Output() cancel = new EventEmitter();
-    @ViewChild(ModalComponent, {static: false}) modal: ModalComponent;
+    @ViewChild(ModalComponent) modal: ModalComponent;
     @ViewChildren(ButtonComponent) buttons: QueryList<ButtonComponent>;
 
     onConfirm($event: MouseEvent): void {

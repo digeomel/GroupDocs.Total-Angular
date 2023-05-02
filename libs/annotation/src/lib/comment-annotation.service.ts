@@ -1,6 +1,8 @@
 import {Observable, Subject} from "rxjs";
 import {CommentAnnotation, Comment} from "./annotation-models";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class CommentAnnotationService {
   private _observer: Subject<CommentAnnotation> = new Subject();
   private readonly _commentAnnotation: Observable<CommentAnnotation> = this._observer.asObservable();

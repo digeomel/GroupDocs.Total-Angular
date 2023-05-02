@@ -1,5 +1,7 @@
 import {DraggableSignature} from "./signature-models";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class SignaturesHolderService {
 
   private map = new Map<string, number[]>();
