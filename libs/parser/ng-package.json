@@ -4,7 +4,7 @@
   "lib": {
     "entryFile": "src/index.ts"
   },
-  "whitelistedNonPeerDependencies" :[
+  "allowedNonPeerDependencies" :[
     "@groupdocs.examples.angular/common-components",
     "@fortawesome/angular-fontawesome",
     "@fortawesome/fontawesome-svg-core",
