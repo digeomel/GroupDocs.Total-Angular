@@ -6,6 +6,7 @@ export class PageModel {
   height: number;
   number: number;
   editable: boolean;
+  sheetName: string;
 }
 
 export class RotatedPage {
