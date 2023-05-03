@@ -1,10 +1,11 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {OnCloseService} from "../on-close.service";
+import { IconName } from '@fortawesome/fontawesome-svg-core';
 
 export interface Option {
   name: string;
   value: any;
-  separator: boolean;
+  separator?: boolean;
 }
 
 @Component({
@@ -20,7 +21,7 @@ export class SelectComponent {
   @Output() selected: EventEmitter<any> = new EventEmitter();
   @Output() opened: EventEmitter<boolean> = new EventEmitter();
   @Input() isOpen = false;
-  @Input() icon: string;
+  @Input() icon: IconName;
 
   constructor(protected _onCloseService: OnCloseService) {
     _onCloseService.onClose.subscribe(() => {

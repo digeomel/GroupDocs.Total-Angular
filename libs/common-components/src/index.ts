@@ -62,3 +62,8 @@ export * from './lib/context-menu/context-menu.component'
 export * from './lib/text-menu/text-menu.component'
 export * from './lib/page-marker.directive';
 export * from './lib/translation/common-translate.loader';
+export * from './lib/thumbnails/thumbnails.component';
+export * from './lib/top-tab/top-tab.component';
+export * from './lib/tabs/tabs.component';
+export * from './lib/tooltip.directive';
+export * from './lib/resizing/resizing.component';

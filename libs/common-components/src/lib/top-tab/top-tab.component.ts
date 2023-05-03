@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ExceptionMessageService} from "../exception-message.service";
 import {TopTabActivatorService} from "../top-tab-activator.service";
 import {ModalService, CommonModals} from "../modal.service";
+import { IconName } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'gd-top-tab',
@@ -10,7 +11,7 @@ import {ModalService, CommonModals} from "../modal.service";
 })
 export class TopTabComponent implements OnInit {
   @Input() id: string;
-  @Input() icon: string;
+  @Input() icon: IconName;
   @Input() disabled = false;
   @Input() tooltip: string;
   @Output() activeTab = new EventEmitter<string>();
@@ -29,7 +30,7 @@ export class TopTabComponent implements OnInit {
     });
   }
 
-  private activation(tabId: string) {  
+  private activation(tabId: string) {
     if (this.id === tabId) {
       this.active = !this.active;
       if (this.active) {

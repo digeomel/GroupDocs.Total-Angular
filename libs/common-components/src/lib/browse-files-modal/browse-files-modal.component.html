@@ -7,7 +7,7 @@
   </div>
   <div class="upload-panel" *ngIf="uploadConfig">
     <input id="gd-upload-input" type="file" multiple style="display: none;"
-            (change)="handleFileInput($event.target.files)">
+            (change)="handleFileInput($event)">
     <div class="context">
       <div class="context-actions">
         <gd-drop-down>

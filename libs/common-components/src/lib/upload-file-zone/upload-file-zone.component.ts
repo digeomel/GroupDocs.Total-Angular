@@ -15,8 +15,9 @@ export class UploadFileZoneComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleFileInput(files: FileList) {
-    this._uploadService.changeFilesList(files);
+  handleFileInput(evt: Event) {
+    const files = (evt.target as HTMLInputElement).files;
+      this._uploadService.changeFilesList(files);
     this.onCloseUpload();
   }
 

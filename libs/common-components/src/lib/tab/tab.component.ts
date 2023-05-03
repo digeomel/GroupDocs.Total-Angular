@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TabActivatorService} from "../tab-activator.service";
+import { IconName } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'gd-tab',
@@ -9,7 +10,7 @@ import {TabActivatorService} from "../tab-activator.service";
 export class TabComponent implements OnInit {
   @Input() id: string;
   @Input() tabTitle: string;
-  @Input() icon: string;
+  @Input() icon: IconName;
   @Input() disabled = false;
   @Input() active = false;
   @Input() content = true;

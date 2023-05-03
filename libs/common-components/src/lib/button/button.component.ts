@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {WindowService} from "../window.service";
+import { IconName, SizeProp } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'gd-button',
@@ -10,12 +11,12 @@ export class ButtonComponent {
   @Input() iconOnly = true;
   @Input() intent = 'default';
   @Input() disabled = false;
-  @Input() icon: string;
+  @Input() icon: IconName;
   @Input() iconClass: string;
   @Input() tooltip: string;
   @Input() className: string;
   @Input() toggle = false;
-  @Input() iconSize: string;
+  @Input() iconSize: SizeProp;
   @Input() iconRegular = false;
   @Input() elementPosition = 0;
 

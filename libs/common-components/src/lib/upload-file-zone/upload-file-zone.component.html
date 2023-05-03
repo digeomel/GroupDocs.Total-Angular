@@ -5,10 +5,10 @@
   <h2>Drag &amp; Drop your files here</h2>
   <h4>OR</h4>
   <div class="gd-drag-n-drop-buttons">
-    <label class="btn btn-primary"> 
+    <label class="btn btn-primary">
       <fa-icon [icon]="['fas','file']"></fa-icon>
       SELECT FILE
-      <input id="gd-upload-input" type="file" multiple style="display: none;" (change)="handleFileInput($event.target.files)">
+      <input id="gd-upload-input" type="file" multiple style="display: none;" (change)="handleFileInput($event)">
       </label>
   </div>
 </div>

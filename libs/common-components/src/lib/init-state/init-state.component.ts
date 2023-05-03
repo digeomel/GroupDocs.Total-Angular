@@ -1,4 +1,5 @@
 import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
+import { IconName } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'gd-init-state',
@@ -6,7 +7,7 @@ import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
   styleUrls: ['./init-state.component.less']
 })
 export class InitStateComponent implements OnInit {
-  @Input() icon: string;
+  @Input() icon: IconName;
   @Input() text: string;
   @Output() fileDropped = new EventEmitter<boolean>();
   showUploadFile = false;

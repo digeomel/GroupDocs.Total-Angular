@@ -56,17 +56,17 @@ export class ResizingComponent implements OnInit, AfterViewInit {
   ngOnInit() {
   }
 
-  catchUp($event: DragEvent) {
+  catchUp($event: Event) {
     // ff
     $event.preventDefault();
-    if ($event.dataTransfer) { // ff
-      $event.dataTransfer.setData('text', 'foo');
+    if (($event as DragEvent).dataTransfer) { // ff
+      $($event as DragEvent).dataTransfer.setData('text', 'foo');
     }
     this.grab = true;
     this.oldPosition = Utils.getMousePosition($event);
   }
 
-  resize($event: DragEvent, el: string) {
+  resize($event: Event, el: string) {
     if (!this.grab) {
       return;
     }
@@ -93,18 +93,18 @@ export class ResizingComponent implements OnInit, AfterViewInit {
     this.offsetY.emit(offsetY);
   }
 
-  end($event: DragEvent, el: string) {
+  end($event: Event, el: string) {
     // ff
     this.resize($event, el);
     this.release.emit(true);
     this.grab = false;
   }
 
-  start($event: DragEvent) {
+  start($event: Event) {
     this.drop($event);
   }
 
-  drop($event: DragEvent) {
+  drop($event: Event) {
     $event.stopPropagation();
     $event.preventDefault();
   }

@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FileModel, FileUtil} from "../file.service";
-import {UploadFilesService} from "../upload-files.service";
+import { UploadFilesService } from "../upload-files.service";
+import { IconName } from '@fortawesome/fontawesome-svg-core';
 import * as jquery from "jquery";
 const $ = jquery;
 
@@ -8,7 +9,7 @@ const upload_disc = 'Disc';
 
 const upload_url = 'URL';
 
-const uploads_choices = [{name: upload_disc, icon: 'hdd'}, {name: upload_url, icon: 'link'}];
+const uploads_choices: { name: string, icon: IconName }[] = [{name: upload_disc, icon: 'hdd'}, {name: upload_url, icon: 'link'}];
 
 @Component({
   selector: 'gd-browse-files-modal',
@@ -95,7 +96,7 @@ export class BrowseFilesModalComponent implements OnInit {
       prevDir.guid = guid;
       prevDir.directory = true;
       prevDir.isDirectory = true;
-      
+
       this.selectedFile = prevDir;
       this.selectedDirectory.emit(guid);
     }
@@ -133,7 +134,8 @@ export class BrowseFilesModalComponent implements OnInit {
     }
   }
 
-  handleFileInput(files: FileList) {
+  handleFileInput(evt: Event) {
+    const files = (evt.target as HTMLInputElement).files;
     this._uploadService.changeFilesList(files);
   }
 

@@ -102,7 +102,7 @@ export class DropDownItemComponent{
   constructor(@Inject(forwardRef(() => DropDownComponent)) public dropdown) {}
 
   selectEntry(){
-    this.selected.next();
+    this.selected.next(true);
     this.dropdown.close();
   }
 }

@@ -155,11 +155,11 @@ export class FormattingService {
   }
 
   Undo() {
-    this._observerUndo.next();
+    this._observerUndo.next(true);
   }
 
   Redo() {
-    this._observerRedo.next();
+    this._observerRedo.next(true);
   }
 
   changeFormatItalic(italic: boolean) {

@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { IconName } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'gd-side-panel',
@@ -8,7 +9,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 export class SidePanelComponent {
   @Input() title: string;
-  @Input() icon: string;
+  @Input() icon: IconName;
   @Input() closable = true;
   @Input() saveable = true;
   @Output() hideSidePanel = new EventEmitter<boolean>();

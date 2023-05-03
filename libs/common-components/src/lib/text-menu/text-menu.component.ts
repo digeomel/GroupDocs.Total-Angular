@@ -42,7 +42,7 @@ export class TextMenuComponent implements OnInit {
               private _windowService: WindowService,
               protected _elementRef: ElementRef<HTMLElement>,
               private renderer: Renderer2) {
-    
+
      _onCloseService.onClose.subscribe(() => {
       this.colorPickerShow = false;
     });
@@ -75,7 +75,7 @@ export class TextMenuComponent implements OnInit {
     $(".gd-wrapper").off("keyup");
     this.outFontSize.emit($event.value);
     $(".gd-wrapper").on("keyup", () => {
-      const fontElements = document.getElementsByTagName("font");
+      const fontElements = document.getElementsByTagName("font") as HTMLCollectionOf<HTMLFontElement>;
       for (let i = 0, len = fontElements.length; i < len; ++i) {
         if (fontElements[i].getAttribute('size') === "7") {
           fontElements[i].removeAttribute("size");
