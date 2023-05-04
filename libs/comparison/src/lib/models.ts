@@ -1,10 +1,10 @@
-import {PageModel} from "@groupdocs.examples.angular/common-components";
+import {FileDescription, PageModel} from "@groupdocs.examples.angular/common-components";
 
 export class ComparedPageModel extends PageModel{
   changes: ChangeInfo[]
 }
 
-export class CompareResult {
+export class CompareResult extends FileDescription {
   changes: ChangeInfo[];
   pages: ComparedPageModel[];
   guid: string;

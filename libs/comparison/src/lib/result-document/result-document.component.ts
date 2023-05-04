@@ -1,8 +1,8 @@
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
-import { DocumentComponent, NavigateService, WindowService } from '@groupdocs.examples.angular/common-components';
-import {ZoomService,ZoomDirective} from  '@groupdocs.examples.angular/common-components';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { DocumentComponent, NavigateService, WindowService, ZoomDirective, ZoomService } from '@groupdocs.examples.angular/common-components';
 import * as jquery from 'jquery';
 import { DifferencesService } from '../differences.service';
+import { CompareResult } from '../models';
 const $ = jquery;
 
 @Component({
@@ -22,6 +22,10 @@ export class ResultDocumentComponent extends DocumentComponent implements OnInit
               navigateService: NavigateService) {
     super(_elementRef, zoomService, windowService, navigateService);
     this.changesService = changeService;
+  }
+
+  asCompareResult(obj: any): CompareResult {
+    return obj as CompareResult;
   }
 
   close(){

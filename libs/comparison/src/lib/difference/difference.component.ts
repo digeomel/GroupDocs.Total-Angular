@@ -24,8 +24,9 @@ export class DifferenceComponent implements OnInit {
     this.changesService = changeService;
   }
 
-  addAction(id, action) {
-    this.changesService.addToComparisonActions(id, action)
+  addAction(id, evt) {
+    const action = (evt.target as HTMLInputElement).value;
+    this.changesService.addToComparisonActions(id, parseInt(action, 10));
   }
 
   ngOnInit() {

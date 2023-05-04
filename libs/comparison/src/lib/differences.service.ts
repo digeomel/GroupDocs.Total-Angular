@@ -29,7 +29,7 @@ export class DifferencesService {
   }
 
   sendClickEvent(){
-    this.subject.next();
+    this.subject.next(true);
   }
 
   getClickEvent():Observable<any>{
