@@ -28,14 +28,17 @@ export class ConversionBrowseFilesModalComponent extends BrowseFilesModalCompone
     super(_uploadService);
   }
 
-  selectAllItems(checked: boolean){
+  selectAllItems(evt: Event) {
+    const checked = (evt.target as HTMLInputElement).checked;
     this.selectAll.emit(checked);
 
     this.dynamicOptions = this.prepareMultipleConversionTypes();
   }
 
-  selectSingleItem(checked: boolean, file: ExtendedFileModel){
+  selectSingleItem(evt: Event, file: ExtendedFileModel){
     // TODO: refactor?
+    // Oh yes, Egor, lots of space for improvement and refactoring in your code :)
+    const checked = (evt.target as HTMLInputElement).checked;
     const selectedFiles = this.files.filter(f => f.guid === file.guid);
     if (selectedFiles.length === 1){
       selectedFiles[0].selected = checked;
@@ -97,7 +100,7 @@ export class ConversionBrowseFilesModalComponent extends BrowseFilesModalCompone
             }
           }
         }
-    }); 
+    });
 
     return longestArray;
   }
@@ -108,7 +111,7 @@ export class ConversionBrowseFilesModalComponent extends BrowseFilesModalCompone
       this.selectAll.emit(false);
       file.selected = true;
     }
-    
+
     this._format = $event.value;
     const conversionItems = new Array<ConversionItemModel>();
 
@@ -178,7 +181,7 @@ export class ConversionBrowseFilesModalComponent extends BrowseFilesModalCompone
 
   allItemsSelected() {
     if (this.files && this.files.filter(file => !file.isDirectory && !file.directory).length > 0 && this.files.length > 0) {
-      return this.files.filter(file => !file.isDirectory && !file.directory && file.selected).length 
+      return this.files.filter(file => !file.isDirectory && !file.directory && file.selected).length
          === this.files.filter(file => !file.isDirectory && !file.directory).length;
     }
     else return false;

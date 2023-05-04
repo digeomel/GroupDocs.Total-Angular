@@ -1,3 +1,4 @@
+import { IconName } from "@fortawesome/fontawesome-svg-core";
 import {FileModel} from "@groupdocs.examples.angular/common-components";
 
 export class ConversionRequestModel{
@@ -17,9 +18,9 @@ export class ConversionItemModel implements FileModel {
     sizeString: string;
     destinationFileName: string;
     destinationFormatName: string;
-    sourceIcon: string;
+    sourceIcon: IconName;
     sourceFormatName: string;
-    destinationIcon: string;
+    destinationIcon: IconName;
     converted: boolean;
     converting: boolean;
     isDirectory: boolean;
