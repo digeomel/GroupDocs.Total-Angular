@@ -11,3 +11,12 @@ export * from './lib/active-canvas.service'
 export * from './lib/signatures-holder.service'
 export * from './lib/signature-tab-activator.service'
 export * from './lib/drag-signature.service'
+export * from './lib/signature/signature.component';
+export * from './lib/new-bar-qr-code/new-bar-qr-code.component';
+export * from './lib/upload-signature/upload-signature.component';
+export * from './lib/dnd-signature.directive';
+export * from './lib/canvas/canvas.component';
+export * from './lib/stamp-canvas/stamp-canvas.component';
+export * from './lib/signature-left-panel/signature-left-panel.component';
+export * from './lib/stamp-modal/stamp-modal.component';
+export * from './lib/hand-modal/hand-modal.component';

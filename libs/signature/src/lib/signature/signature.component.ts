@@ -75,16 +75,16 @@ export class Signature implements OnInit, AfterViewInit, AfterViewChecked {
     return 'data:image/png;base64,' + this.data.data;
   }
 
-  dragOver($event: DragEvent) {
+  dragOver($event: Event) {
     $event.preventDefault();
     $event.stopPropagation();
   }
 
-  dragStart($event: DragEvent) {
+  dragStart($event: Event) {
     $event.preventDefault();
     this.oldPosition = Utils.getMousePosition($event);
-    if ($event.dataTransfer) {
-      $event.dataTransfer.setData('text', 'foo');
+    if (($event as DragEvent).dataTransfer) {
+      ($event as DragEvent).dataTransfer.setData('text', 'foo');
     }
   }
 

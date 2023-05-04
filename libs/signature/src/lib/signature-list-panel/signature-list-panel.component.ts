@@ -5,6 +5,7 @@ import {SelectSignatureService} from "../select-signature.service";
 import {DragSignatureService} from "../drag-signature.service";
 import {DatePipe} from "@angular/common";
 import {SignaturesHolderService} from "../signatures-holder.service";
+import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
 
 
 @Component({
@@ -15,7 +16,7 @@ import {SignaturesHolderService} from "../signatures-holder.service";
 export class SignatureListPanelComponent implements OnInit, OnChanges {
 
   @Input() signatures: Signature[];
-  @Input() icon: string;
+  @Input() icon: IconName;
   @Input() signatureType: string;
   @Input() isPdf: boolean;
   @Input() loading: boolean;
@@ -46,6 +47,10 @@ export class SignatureListPanelComponent implements OnInit, OnChanges {
 
   isDigital() {
     return SignatureType.DIGITAL.id === this.signatureType;
+  }
+
+  asIconPrefix(iconPrefix: string): IconPrefix {
+    return iconPrefix as IconPrefix;
   }
 
   private selectSignature(sign: DraggableSignature) {

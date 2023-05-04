@@ -6,7 +6,7 @@
           <div class="gd-signature-list-title" *ngIf="showNewCode || showUpload">
             <div class="gd-signature-context-panel-title">{{getTitle()}}</div>
             <div class="gd-signature-title-icon">
-              <fa-icon [icon]="['fa','times']" [class]="'ng-fa-icon icon'" (click)="closeNewSignature()"></fa-icon>
+              <fa-icon [icon]="[asIconPrefix('fa'),'times']" [class]="'ng-fa-icon icon'" (click)="closeNewSignature()"></fa-icon>
             </div>
           </div>
         </div>
@@ -18,7 +18,7 @@
           <div class="gd-signature-list-title">
             <div class="gd-signature-context-panel-title">{{getName()}}</div>
             <div class="gd-signature-title-icon">
-              <fa-icon [icon]="['fa','plus']" [class]="'ng-fa-icon icon'"
+              <fa-icon [icon]="[asIconPrefix('fa'),'plus']" [class]="'ng-fa-icon icon'"
                        [ngClass]="showNewCode || showUpload ? 'disabled' : ''"
                        (click)="openNewSignature()"></fa-icon>
             </div>

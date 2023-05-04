@@ -18,7 +18,8 @@ export class UploadSignatureComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleFileInput(files: FileList) {
+  handleFileInput(evt: Event) {
+    const files = (evt.target as HTMLInputElement).files;
     this.addFiles(files);
   }
 

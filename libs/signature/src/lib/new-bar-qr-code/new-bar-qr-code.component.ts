@@ -3,6 +3,7 @@ import {SignatureService} from "../signature.service";
 import {OpticalCodeModel} from "../signature-models";
 import {Subject} from "rxjs";
 import {debounceTime} from "rxjs/operators";
+import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'gd-new-bar-qr-code',
@@ -11,7 +12,7 @@ import {debounceTime} from "rxjs/operators";
 })
 export class NewBarQrCodeComponent implements OnInit {
   @Input() type: string;
-  @Input() icon: string;
+  @Input() icon: IconName;
   @Input() name: string;
   @Output() closePanel = new EventEmitter<boolean>();
   encodedImage: string;
@@ -62,5 +63,9 @@ export class NewBarQrCodeComponent implements OnInit {
 
   getData() {
     return 'data:image/png;base64,' + this.encodedImage;
+  }
+
+  asIconPrefix(iconPrefix: string): IconPrefix {
+    return iconPrefix as IconPrefix;
   }
 }

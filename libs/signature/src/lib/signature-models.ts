@@ -1,3 +1,4 @@
+import { IconName } from "@fortawesome/fontawesome-svg-core";
 import {Formatting} from "@groupdocs.examples.angular/common-components";
 
 export class Signature {
@@ -8,21 +9,28 @@ export class Signature {
   fontColor: string;
 }
 
+export interface SignatureTypeInterface {
+  id: string;
+  name: string;
+  icon: IconName;
+  title: string;
+}
+
 export class SignatureType {
-  public static TEXT = {id: 'text', name: 'Text signatures', icon: 'font', title: ''};
-  public static IMAGE = {id: 'image', name: 'Uploaded Images', icon: 'image', title: 'Add image signature'};
-  public static QR_CODE = {id: 'qrCode', name: 'QR codes', icon: 'qrcode', title: 'New QR code'};
-  public static BAR_CODE = {id: 'barCode', name: 'Bar codes', icon: 'barcode', title: 'New Bar code'};
-  public static DIGITAL = {
+  public static TEXT: SignatureTypeInterface = {id: 'text', name: 'Text signatures', icon: 'font', title: ''};
+  public static IMAGE: SignatureTypeInterface = {id: 'image', name: 'Uploaded Images', icon: 'image', title: 'Add image signature'};
+  public static QR_CODE: SignatureTypeInterface = {id: 'qrCode', name: 'QR codes', icon: 'qrcode', title: 'New QR code'};
+  public static BAR_CODE: SignatureTypeInterface = {id: 'barCode', name: 'Bar codes', icon: 'barcode', title: 'New Bar code'};
+  public static DIGITAL: SignatureTypeInterface = {
     id: 'digital',
     name: 'Digital signatures',
     icon: 'fingerprint',
     title: 'New digital signature'
   };
-  public static STAMP = {id: 'stamp', name: 'Stamps', icon: 'stamp', title: ''};
-  public static HAND = {id: 'hand', name: 'Signatures', icon: 'signature', title: ''};
+  public static STAMP: SignatureTypeInterface = {id: 'stamp', name: 'Stamps', icon: 'stamp', title: ''};
+  public static HAND: SignatureTypeInterface = {id: 'hand', name: 'Signatures', icon: 'signature', title: ''};
 
-  public static getSignatureType(id: string) {
+  public static getSignatureType(id: string): SignatureTypeInterface {
     switch (id) {
       case SignatureType.TEXT.id:
         return SignatureType.TEXT;

@@ -11,6 +11,7 @@ import {
   WindowService
 } from "@groupdocs.examples.angular/common-components";
 import * as jquery from "jquery";
+import { IconPrefix } from '@fortawesome/fontawesome-svg-core';
 
 const $ = jquery;
 
@@ -256,5 +257,9 @@ export class StampModalComponent implements OnInit, OnDestroy {
       return props.radius * 2;
     }
     return 100;
+  }
+
+  asIconPrefix(iconPrefix: string): IconPrefix {
+    return iconPrefix as IconPrefix;
   }
 }

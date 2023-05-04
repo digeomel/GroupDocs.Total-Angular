@@ -57,7 +57,7 @@ export class SignatureAppComponent implements OnDestroy, OnInit {
   file: FileDescription;
   signatureConfig: SignatureConfig;
   countPages = 0;
-  formatDisabled = !this.file;
+  formatDisabled = false;
   credentials: FileCredentials;
   browseFilesModal = CommonModals.BrowseFiles;
   isDesktop: boolean;

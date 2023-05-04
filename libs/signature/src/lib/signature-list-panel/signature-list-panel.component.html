@@ -6,7 +6,7 @@
              (dragover)="dragOver($event)" (dragstart)="dragStart($event)"
              (dragleave)="dragLeave($event, signature.guid)" (drop)="drop($event)">
           <div class="gd-signature-thumbnail" *ngIf="isDigital()" (click)="select(signature.guid)">
-            <fa-icon [icon]="['fa','fingerprint']" [class]="'ng-fa-icon icon'"></fa-icon>
+            <fa-icon [icon]="[asIconPrefix('fa'),'fingerprint']" [class]="'ng-fa-icon icon'"></fa-icon>
           </div>
           <div class="gd-signature-thumbnail" *ngIf="signature.image">
             <img [ngClass]="'gd-signature-thumbnail-' + signatureType"

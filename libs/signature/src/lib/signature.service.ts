@@ -161,6 +161,6 @@ export class SignatureService {
   }
 
   refreshSignatures() {
-    this._observer.next();
+    this._observer.next(true);
   }
 }

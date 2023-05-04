@@ -11,7 +11,7 @@
                          (selectedColor)="selectColor($event)"></gd-color-picker>
       </div>
       <div class="bc-paint-export" (click)="saveSign(canvasComponent)">
-        <fa-icon [icon]="['fa','save']" [class]="'ng-fa-icon icon'"></fa-icon>
+        <fa-icon [icon]="[asIconPrefix('fa'),'save']" [class]="'ng-fa-icon icon'"></fa-icon>
         <span class="save-button">Save</span>
       </div>
     </div>

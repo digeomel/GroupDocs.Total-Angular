@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Signature, SignatureType} from "../signature-models";
 import {SignatureService} from "../signature.service";
+import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'gd-signature-left-panel',
@@ -85,9 +86,9 @@ export class SignatureLeftPanelComponent implements OnInit, OnChanges {
     return SignatureType.QR_CODE.id === this.id ? 'Qr Code' : (SignatureType.BAR_CODE.id === this.id ? 'Bar Code' : '');
   }
 
-  icon() {
+  icon(): IconName {
     if (!this.id) {
-      return "";
+      return "" as IconName;
     }
     return SignatureType.getSignatureType(this.id).icon;
   }
@@ -115,5 +116,9 @@ export class SignatureLeftPanelComponent implements OnInit, OnChanges {
     } else {
       this.newSignatureEvent.emit(this.id);
     }
+  }
+
+  asIconPrefix(iconPrefix: string): IconPrefix {
+    return iconPrefix as IconPrefix;
   }
 }

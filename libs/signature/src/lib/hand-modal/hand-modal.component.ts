@@ -4,6 +4,7 @@ import {SignatureTabActivatorService} from "../signature-tab-activator.service"
 import {CanvasComponent} from "../canvas/canvas.component";
 import {SignatureType} from "../signature-models";
 import {CommonModals, ModalService} from "@groupdocs.examples.angular/common-components";
+import { IconPrefix } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'gd-hand-modal',
@@ -59,5 +60,9 @@ export class HandModalComponent implements OnInit {
   private clear(canvasComponent: CanvasComponent) {
     this.selectedColor = this.defaultColor;
     canvasComponent.clear();
+  }
+
+  asIconPrefix(iconPrefix: string): IconPrefix {
+    return iconPrefix as IconPrefix;
   }
 }
