@@ -43,7 +43,7 @@ export class AnnotationAppComponent implements OnInit {
   isLoading: boolean;
   annotationConfig: AnnotationConfig;
   browseFilesModal = CommonModals.BrowseFiles;
-  formatDisabled = !this.file;
+  formatDisabled = false;
   public credentials: FileCredentials;
   annotationTypes = [
     AnnotationType.TEXT,
@@ -181,7 +181,7 @@ export class AnnotationAppComponent implements OnInit {
     });
   }
 
-  getComments() {
+  getComments(): Comment[] {
     return this.comments.get(this.commentOpenedId);
   }
 
@@ -623,7 +623,7 @@ export class AnnotationAppComponent implements OnInit {
     return null;
   }
 
-  resizingCreatingAnnotation($event: MouseEvent) {
+  resizingCreatingAnnotation($event: Event) {
     if (this.activeAnnotationTab) {
       $event.preventDefault();
     }
@@ -648,7 +648,7 @@ export class AnnotationAppComponent implements OnInit {
     return new Position(left, top);
   }
 
-  finishCreatingAnnotation($event: MouseEvent) {
+  finishCreatingAnnotation($event: Event) {
     if (this.activeAnnotationTab) {
       $event.preventDefault();
     }

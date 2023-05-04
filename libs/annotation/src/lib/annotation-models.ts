@@ -1,20 +1,26 @@
-import {PageModel} from "@groupdocs.examples.angular/common-components";
+import { IconName } from "@fortawesome/fontawesome-svg-core";
+import {FileDescription, PageModel} from "@groupdocs.examples.angular/common-components";
 
+export interface AnnotationTypeInterface {
+  id: string;
+  name: string;
+  icon: IconName;
+}
 export class AnnotationType {
-  public static TEXT = {id: 'textHighlight', name: 'Text', icon: 'highlighter'};
-  public static AREA = {id: 'area', name: 'Area', icon: 'vector-square'};
-  public static POINT = {id: 'point', name: 'Point', icon: 'thumbtack'};
-  public static TEXT_STRIKEOUT = {id: 'textStrikeout', name: 'Text strikeout', icon: 'strikethrough',};
-  public static POLYLINE = {id: 'polyline', name: 'Polyline', icon: 'signature'};
-  public static TEXT_FIELD = {id: 'textField', name: 'Text field', icon: 'i-cursor'};
-  public static WATERMARK = {id: 'watermark', name: 'Watermark', icon: 'tint'};
-  public static TEXT_REPLACEMENT = {id: 'textReplacement', name: 'Text replacement', icon: 'edit'};
-  public static ARROW = {id: 'arrow', name: 'Arrow', icon: 'mouse-pointer'};
-  public static TEXT_REDACTION = {id: 'textRedaction', name: 'Text redaction', icon: 'brush'};
-  public static TEXT_UNDERLINE = {id: 'textUnderline', name: 'Text underline', icon: 'underline'};
-  public static DISTANCE = {id: 'distance', name: 'Distance', icon: 'ruler'};
+  public static TEXT: AnnotationTypeInterface = {id: 'textHighlight', name: 'Text', icon: 'highlighter'};
+  public static AREA: AnnotationTypeInterface = {id: 'area', name: 'Area', icon: 'vector-square'};
+  public static POINT: AnnotationTypeInterface = {id: 'point', name: 'Point', icon: 'thumbtack'};
+  public static TEXT_STRIKEOUT: AnnotationTypeInterface = {id: 'textStrikeout', name: 'Text strikeout', icon: 'strikethrough',};
+  public static POLYLINE: AnnotationTypeInterface = {id: 'polyline', name: 'Polyline', icon: 'signature'};
+  public static TEXT_FIELD: AnnotationTypeInterface = {id: 'textField', name: 'Text field', icon: 'i-cursor'};
+  public static WATERMARK: AnnotationTypeInterface = {id: 'watermark', name: 'Watermark', icon: 'tint'};
+  public static TEXT_REPLACEMENT: AnnotationTypeInterface = {id: 'textReplacement', name: 'Text replacement', icon: 'edit'};
+  public static ARROW: AnnotationTypeInterface = {id: 'arrow', name: 'Arrow', icon: 'mouse-pointer'};
+  public static TEXT_REDACTION: AnnotationTypeInterface = {id: 'textRedaction', name: 'Text redaction', icon: 'brush'};
+  public static TEXT_UNDERLINE: AnnotationTypeInterface = {id: 'textUnderline', name: 'Text underline', icon: 'underline'};
+  public static DISTANCE: AnnotationTypeInterface = {id: 'distance', name: 'Distance', icon: 'ruler'};
 
-  public static getAnnotationType(id: string) {
+  public static getAnnotationType(id: string): AnnotationTypeInterface {
     switch (id) {
       case AnnotationType.TEXT.id:
         return AnnotationType.TEXT;
@@ -44,7 +50,7 @@ export class AnnotationType {
   }
 }
 
-export class FileAnnotationDescription {
+export class FileAnnotationDescription extends FileDescription {
   guid: string;
   pages: PageAnnotationModel[];
   supportedAnnotations: string[];

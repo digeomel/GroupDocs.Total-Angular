@@ -5,3 +5,7 @@ export * from './lib/annotation.service'
 export * from './lib/annotation-config.service'
 export * from './lib/comment-annotation.service'
 export * from './lib/remove-annotation.service'
+export * from './lib/annotation/annotation.component';
+export * from './lib/comment-panel/comment-panel.component';
+export * from './lib/comment/comment.component';
+export * from './lib/create-comment/create-comment.component';

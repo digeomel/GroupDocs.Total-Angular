@@ -8,7 +8,7 @@ import {Comment} from '../annotation-models'
   styleUrls: ['./comment-panel.component.less']
 })
 export class CommentPanelComponent implements OnInit {
-  @Input() comments: [];
+  @Input() comments: Comment[];
   @Input() annotationId: number;
   @Input() commentator: string;
 
