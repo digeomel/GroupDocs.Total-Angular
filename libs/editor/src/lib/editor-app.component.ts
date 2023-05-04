@@ -35,7 +35,7 @@ export class EditorAppComponent implements OnInit, AfterViewInit {
   files: FileModel[] = [];
   file: FileDescription;
   editorConfig: EditorConfig;
-  formatDisabled = !this.file;
+  formatDisabled = false;
   downloadDisabled = true;
   credentials: FileCredentials;
   browseFilesModal = CommonModals.BrowseFiles;
@@ -319,7 +319,7 @@ export class EditorAppComponent implements OnInit, AfterViewInit {
 
     // adding listeners on inputs if present on existing page
     let count = 0;
-    const timerId = setInterval(() => { 
+    const timerId = setInterval(() => {
       count++;
       const page = document.querySelectorAll('.page');
       if (page)
@@ -327,7 +327,7 @@ export class EditorAppComponent implements OnInit, AfterViewInit {
         this.initControlsListeners();
         clearInterval(timerId);
       }
-      if (count === 20) clearInterval();
+      if (count === 20) clearInterval(timerId);
     }, 100);
   }
 
@@ -378,7 +378,7 @@ export class EditorAppComponent implements OnInit, AfterViewInit {
     }
     this._formattingService.changeFormatFontSize($event.value);
     $(".gd-wrapper").on("keyup", () => {
-      const fontElements = document.getElementsByTagName("font");
+      const fontElements = document.getElementsByTagName("font") as HTMLCollectionOf<HTMLFontElement>;
       for (let i = 0, len = fontElements.length; i < len; ++i) {
         if (fontElements[i].getAttribute('size') === "7") {
           fontElements[i].removeAttribute("size");
@@ -618,7 +618,7 @@ export class EditorAppComponent implements OnInit, AfterViewInit {
     if (!data.startsWith("<html><head>") && !data.endsWith("</body></html>")) {
       resultData = "<html><head>" + data + "</body></html>";
     }
-    
+
     if (this.newFile)
     {
       resultData = resultData.replace('<head>', '<head><meta http-equiv="content-type" content="text/html; charset=utf-8"></head><body>');
@@ -626,14 +626,14 @@ export class EditorAppComponent implements OnInit, AfterViewInit {
       {
         resultData = resultData.replace('<body>', '<body><div class="slide">');
       }
-      else 
+      else
       {
         resultData = resultData.replace('<body>', '<body><div class="documentMainContent">');
       }
 
       resultData = resultData.replace('</body>', '</div></body>');
     }
-    else 
+    else
     {
       // for Word files
       resultData = resultData.replace('<div class="documentMainContent">', '</head><body><div class="documentMainContent">');
