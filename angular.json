@@ -125,7 +125,7 @@
       "prefix": "gd",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "libs/viewer/tsconfig.lib.json",
             "project": "libs/viewer/ng-package.json"
@@ -158,7 +158,7 @@
       "prefix": "gd",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "libs/common-components/tsconfig.lib.json",
             "project": "libs/common-components/ng-package.json"
@@ -191,7 +191,7 @@
       "prefix": "gd",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "libs/search/tsconfig.lib.json",
             "project": "libs/search/ng-package.json"
@@ -224,7 +224,7 @@
       "prefix": "gd",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "libs/editor/tsconfig.lib.json",
             "project": "libs/editor/ng-package.json"
@@ -257,7 +257,7 @@
       "prefix": "groupdocs.examples.angular",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "libs/comparison/tsconfig.lib.json",
             "project": "libs/comparison/ng-package.json"
@@ -290,7 +290,7 @@
       "prefix": "gd",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "libs/signature/tsconfig.lib.json",
             "project": "libs/signature/ng-package.json"
@@ -323,7 +323,7 @@
       "prefix": "groupdocs.examples.angular",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "libs/conversion/tsconfig.lib.json",
             "project": "libs/conversion/ng-package.json"
@@ -356,7 +356,7 @@
       "prefix": "gd",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "libs/annotation/tsconfig.lib.json",
             "project": "libs/annotation/ng-package.json"
@@ -389,7 +389,7 @@
       "prefix": "groupdocs.examples.angular",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "libs/metadata/tsconfig.lib.json",
             "project": "libs/metadata/ng-package.json"
@@ -422,7 +422,7 @@
       "prefix": "groupdocs.examples.angular",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "libs/parser/tsconfig.lib.json",
             "project": "libs/parser/ng-package.json"
