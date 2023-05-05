@@ -27,11 +27,13 @@ export class SearchBrowseFilesModalComponent extends BrowseFilesModalComponent i
     super(_uploadService);
   }
 
-  selectAllItems(checked: boolean){
+  selectAllItems(evt: Event) {
+    const checked = (evt.target as HTMLInputElement).checked;
     this.selectAll.emit(checked);
   }
 
-  selectSingleItem(checked: boolean, file: ExtendedFileModel){
+  selectSingleItem(evt: Event, file: ExtendedFileModel) {
+    const checked = (evt.target as HTMLInputElement).checked;
     const selectedFiles = this.files.filter(f => f.guid === file.guid);
     if (selectedFiles.length === 1){
       selectedFiles[0].selected = checked;
@@ -60,7 +62,7 @@ export class SearchBrowseFilesModalComponent extends BrowseFilesModalComponent i
 
   allItemsSelected() {
     if (this.files && this.files.filter(file => !file.isDirectory && !file.directory).length > 0 && this.files.length > 0) {
-      return this.files.filter(file => !file.isDirectory && !file.directory && file.selected).length 
+      return this.files.filter(file => !file.isDirectory && !file.directory && file.selected).length
          === this.files.filter(file => !file.isDirectory && !file.directory).length;
     }
     else return false;

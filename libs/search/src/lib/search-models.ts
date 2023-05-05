@@ -1,8 +1,8 @@
 import { FileModel } from "@groupdocs.examples.angular/common-components";
 
 export class IndexedFileModel extends FileModel {
-  documentStatus: string;
-  password: string;
+  documentStatus?: string;
+  password?: string;
 }
 
 export class SearchResult {
