@@ -4,7 +4,7 @@ import { IconName } from '@fortawesome/fontawesome-svg-core';
 
 export interface Option {
   name: string;
-  value: any;
+  value?: any;
   separator?: boolean;
 }
 

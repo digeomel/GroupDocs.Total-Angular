@@ -22,6 +22,7 @@
     "jquery": "^3.4.1",
     "smoothscroll-polyfill": "^0.4.4",
     "ng2-date-picker": "^8.0.0",
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.0",
+    "moment": "^2.29.4"
   }
 }

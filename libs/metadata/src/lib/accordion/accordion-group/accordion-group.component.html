@@ -4,7 +4,7 @@
       <fa-icon *ngIf="opened" class="chevron" [icon]="['fas', 'chevron-up']"></fa-icon>
       <div class="text">{{title}}</div>
       <fa-icon class="trash" *ngIf="isRemoveAvailable()" [icon]="['fas', 'trash']" (click)="delete($event)"></fa-icon>
-      <gd-button class="plus" [icon]="['plus']" [hidden]="addHidden" [disabled]="!isAddAvailable()" (click)="addProperty($event)"></gd-button>
+      <gd-button class="plus" [icon]="'plus'" [hidden]="addHidden" [disabled]="!isAddAvailable()" (click)="addProperty($event)"></gd-button>
     </div>
     <div class="body" [ngClass]="{'hidden': !opened}">
       <div *ngFor="let property of properties" class="property-wrapper">

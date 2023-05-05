@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, QueryList, ViewChildren, AfterViewInit, OnInit } from '@angular/core';
-import { WindowService } from '@groupdocs.examples.angular/common-components';
+import { Option, WindowService } from '@groupdocs.examples.angular/common-components';
 import { FilePropertyModel, KnownPropertyModel, AccessLevels, RemovePropertyModel, MetadataPropertyType } from '../../metadata-models';
 import { IDatePickerConfig } from 'ng2-date-picker';
 import * as moment_ from 'moment';
@@ -21,7 +21,7 @@ export class AccordionGroupComponent implements OnInit, AfterViewInit {
   @Input() properties: FilePropertyModel[];
   @Output() removeProperty = new EventEmitter<RemovePropertyModel>();
   knownPropertyDictionary: { [key: string]: KnownPropertyModel };
-  notAddedProperties: KnownPropertyModel[];
+  notAddedProperties: KnownPropertyModel[] & Option[];
   metadataPropertyType: typeof MetadataPropertyType
   @ViewChildren('textinput') textinput: QueryList<any>;
   isDesktop: boolean;
@@ -30,9 +30,9 @@ export class AccordionGroupComponent implements OnInit, AfterViewInit {
   };
   editableTypes: Set<MetadataPropertyType> = new Set<MetadataPropertyType>(
     [
-      MetadataPropertyType.String, 
-      MetadataPropertyType.Integer, 
-      MetadataPropertyType.Long, 
+      MetadataPropertyType.String,
+      MetadataPropertyType.Integer,
+      MetadataPropertyType.Long,
       MetadataPropertyType.Double,
       MetadataPropertyType.Boolean,
       MetadataPropertyType.DateTime

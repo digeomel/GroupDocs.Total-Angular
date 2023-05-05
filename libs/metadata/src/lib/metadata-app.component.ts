@@ -185,8 +185,8 @@ export class MetadataAppComponent implements OnInit, AfterViewInit {
 
   exportProperties() {
     if (!this.isFileLoaded()) return;
-    this.metadataService.exportProperties(this.credentials).subscribe((exportedFile: Blob) => 
-      this.saveBlob(exportedFile, "ExportedProperties.xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")); 
+    this.metadataService.exportProperties(this.credentials).subscribe((exportedFile: Blob) =>
+      this.saveBlob(exportedFile, "ExportedProperties.xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"));
   }
 
   save() {
@@ -194,8 +194,8 @@ export class MetadataAppComponent implements OnInit, AfterViewInit {
     savingFile.guid = this.credentials.guid;
     savingFile.password = this.credentials.password;
     savingFile.packages = this.packages
-      .map(updatedPackage => { 
-        return { id: updatedPackage.id, properties: updatedPackage.properties.filter(p => p.added || p.edited)}; 
+      .map(updatedPackage => {
+        return { id: updatedPackage.id, properties: updatedPackage.properties.filter(p => p.added || p.edited)};
       })
       .filter(updatedPackage => updatedPackage.properties.length > 0);
 
@@ -213,7 +213,7 @@ export class MetadataAppComponent implements OnInit, AfterViewInit {
     });
   }
 
-  hideSidePanel($event: Event) {
+  hideSidePanel($event: boolean) {
     this.showSidePanel = !this.showSidePanel;
   }
 
@@ -273,7 +273,7 @@ export class MetadataAppComponent implements OnInit, AfterViewInit {
         }
 
         const countPages = preview.pages ? preview.pages.length : 0;
-        
+
         this.navigateService.countPages = countPages;
         this.navigateService.currentPage = 1;
         this.countPages = countPages;
@@ -304,15 +304,7 @@ export class MetadataAppComponent implements OnInit, AfterViewInit {
 
   private saveBlob(blob: Blob, fileName: string, mimeType: string) {
     const newBlob = new Blob([blob], { type: mimeType });
-
-    // IE
-    if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-        window.navigator.msSaveOrOpenBlob(newBlob);
-        return;
-    }
-    
     const data = window.URL.createObjectURL(newBlob);
-
     const link = document.createElement('a');
     link.href = data;
     link.download = fileName;
