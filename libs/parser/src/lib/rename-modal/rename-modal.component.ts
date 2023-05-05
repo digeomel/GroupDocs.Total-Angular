@@ -9,13 +9,13 @@ import {
   styleUrls: ['./rename-modal.component.less']
 })
 export class RenameModalComponent implements OnInit {
-  @Input() id: String;
-  @Input() title: String;
-  @Input() promptText: String;
-  @Input() acceptText: String;
+  @Input() id: string;
+  @Input() title: string;
+  @Input() promptText: string;
+  @Input() acceptText: string;
 
-  @Input() operationId: String;
-  @Input() initialValue: String;
+  @Input() operationId: string;
+  @Input() initialValue: string;
 
   @Output() acceptEvent = new EventEmitter();
   @Output() cancelEvent = new EventEmitter();
@@ -23,8 +23,8 @@ export class RenameModalComponent implements OnInit {
   @ViewChild('modal', { static: true }) modalElement: ModalComponent;
   @ViewChild('inputBox', { static: true }) inputBox: ElementRef;
 
-  private _error: String = null;
-  private _value: String;
+  private _error: string = null;
+  private _value: string;
 
   get hasError() {
     return this.error != null;
@@ -35,7 +35,7 @@ export class RenameModalComponent implements OnInit {
   }
 
   @Input()
-  set error(newError: String) {
+  set error(newError: string) {
     this._error = newError;
   }
 
@@ -43,7 +43,7 @@ export class RenameModalComponent implements OnInit {
     return this._value;
   }
 
-  set value(newValue: String) {
+  set value(newValue: string) {
     this._value = newValue;
     if (this.hasError) {
       this._error = null;
@@ -85,5 +85,9 @@ export class RenameModalComponent implements OnInit {
     if (this.modalElement) {
       this.modalElement.cancelClose();
     }
+  }
+
+  onInput(evt: Event) {
+    this.value = (evt.target as HTMLInputElement).value;
   }
 }

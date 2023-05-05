@@ -1,10 +1,10 @@
-import { Injectable, NgModuleFactoryLoader } from '@angular/core';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from '@angular/core';
 
-import { Api, FileCredentials, FileUtil, ConfigService } from "@groupdocs.examples.angular/common-components";
-import { DocumentDescription, ParseByTemplateResponse, SourceFile, Template } from './app-models';
-import { timeout } from 'rxjs/operators';
+import { Api, ConfigService } from "@groupdocs.examples.angular/common-components";
 import { Observable, Subject } from 'rxjs';
+import { timeout } from 'rxjs/operators';
+import { DocumentDescription, ParseByTemplateResponse, SourceFile, Template } from './app-models';
 
 
 @Injectable({

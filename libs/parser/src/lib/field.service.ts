@@ -71,7 +71,7 @@ export class FieldService implements OnDestroy {
   }
 
   ngOnDestroy() {
-    this._destroy.next();
+    this._destroy.next(true);
     this._destroy.complete();
   }
 

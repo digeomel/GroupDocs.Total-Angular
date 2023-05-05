@@ -46,7 +46,7 @@ export class PlaceholderComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this._destroy.next();
+    this._destroy.next(true);
     this._destroy.complete();
   }
 

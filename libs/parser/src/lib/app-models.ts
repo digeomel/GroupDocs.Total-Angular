@@ -99,6 +99,10 @@ export class SourceFile {
 
 export class DocumentDescription extends SourceFile {
   pages: DocumentPageDescription[];
+  fileType: string;
+  printAllowed: boolean;
+  showGridLines: boolean;
+  thumbnails: PageModel[];
 }
 
 export class DocumentPageDescription {
@@ -106,6 +110,9 @@ export class DocumentPageDescription {
   width: number;
   height: number;
   data: string;
+  angle: number;
+  editable: boolean;
+  sheetName: string;
 }
 
 export class FileDescription {

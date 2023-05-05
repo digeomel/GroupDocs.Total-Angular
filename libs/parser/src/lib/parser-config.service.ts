@@ -1,9 +1,8 @@
-import { Injectable } from '@angular/core';
-import { ParserConfig } from "./parser-config";
-import { Api, ConfigService } from "@groupdocs.examples.angular/common-components";
 import { HttpClient } from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { Api, ConfigService } from "@groupdocs.examples.angular/common-components";
 import { BehaviorSubject, Observable } from "rxjs";
-import { stringify } from '@angular/compiler/src/util';
+import { ParserConfig } from "./parser-config";
 
 @Injectable({
   providedIn: 'root'

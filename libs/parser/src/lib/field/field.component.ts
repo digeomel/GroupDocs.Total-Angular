@@ -49,7 +49,7 @@ export class FieldComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this._destroy.next();
+    this._destroy.next(true);
     this._destroy.complete();
   }
 
@@ -159,11 +159,11 @@ export class FieldComponent implements OnInit, OnDestroy {
     return this._field;
   }
 
-  mouseDown($event: MouseEvent, mode: string) {
+  mouseDown($event: Event, mode: string) {
     $event.preventDefault();
 
     this._fieldService.setActive(this.field.name);
-    const startMousePos = this._fieldService.beginMove($event);
+    const startMousePos = this._fieldService.beginMove($event as MouseEvent);
 
     const left = this.left;
     const top = this.top;

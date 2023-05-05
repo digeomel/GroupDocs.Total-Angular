@@ -9,12 +9,12 @@ import {
   styleUrls: ['./confirmation-modal.component.less']
 })
 export class ConfirmationModalComponent implements OnInit {
-  @Input() id: String;
-  @Input() title: String;
-  @Input() promptText: String;
-  @Input() acceptText: String;
+  @Input() id: string;
+  @Input() title: string;
+  @Input() promptText: string;
+  @Input() acceptText: string;
 
-  @Input() operationId: String;
+  @Input() operationId: string;
 
   @Output() acceptEvent = new EventEmitter();
   @Output() cancelEvent = new EventEmitter();

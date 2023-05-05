@@ -5,3 +5,6 @@ export * from './lib/source-file.service';
 export * from './lib/template.service';
 export * from './lib/placeholder.service';
 export * from './lib/document-page.service';
+export * from './lib/surface/surface.component';
+export * from './lib/field/field.component';
+export * from './lib/side-panel/side-panel.component';

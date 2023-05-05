@@ -3,6 +3,7 @@ import {
   AddDynamicComponentService,
   CommonModals,
   FileCredentials,
+  FileDescription,
   FileModel, Formatting,
   HostingDynamicComponentService,
   LogoComponent,
