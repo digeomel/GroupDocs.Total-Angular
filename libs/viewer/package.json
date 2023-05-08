@@ -20,6 +20,6 @@
     "ng-click-outside2": "^11.1.0",
     "jquery": "^3.6.4",
     "smoothscroll-polyfill": "^0.4.4",
-    "tslib": "^2.0.0"
+    "tslib": "^2.4.1"
   }
 }
