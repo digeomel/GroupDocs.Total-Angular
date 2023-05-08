@@ -40,7 +40,6 @@ import {DragSignatureService} from "./drag-signature.service";
 import {RemoveSignatureService} from "./remove-signature.service";
 import {ActiveSignatureService} from "./active-signature.service";
 import {SignaturesHolderService} from "./signatures-holder.service";
-import 'hammerjs';
 import {CopySignatureService} from "./copy-signature.service";
 import * as jquery from 'jquery';
 

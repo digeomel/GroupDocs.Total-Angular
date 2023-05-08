@@ -1,5 +1,5 @@
 {
-  "$schema": "../node_modules/ng-packagr/ng-package.schema.json",
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/libs/common-components",
   "lib": {
     "entryFile": "src/index.ts"
@@ -12,7 +12,6 @@
     "@fortawesome/free-solid-svg-icons",
     "@ngx-translate/core",
     "ng-click-outside",
-    "hammerjs",
     "jquery",
     "smoothscroll-polyfill"
   ]

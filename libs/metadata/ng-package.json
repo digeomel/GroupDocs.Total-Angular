@@ -12,7 +12,6 @@
     "@fortawesome/free-solid-svg-icons",
     "@ngx-translate/core",
     "ng-click-outside",
-    "hammerjs",
     "jquery",
     "smoothscroll-polyfill",
 	  "ng2-date-picker",

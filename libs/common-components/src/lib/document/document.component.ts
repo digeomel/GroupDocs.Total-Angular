@@ -9,7 +9,6 @@ import {
 } from '@angular/core';
 import {FileDescription, FileUtil} from "../file.service";
 import {ZoomService} from "../zoom.service";
-import * as Hammer from 'hammerjs';
 import {WindowService} from '../window.service';
 import * as jquery from 'jquery';
 import { NavigateService } from '../navigate.service';
@@ -92,8 +91,6 @@ export class DocumentComponent implements OnInit, AfterViewChecked, AfterViewIni
     this.viewportHeight = this.container.offsetHeight;
     this.curWidth = this.docWidth * this.scale;
     this.curHeight = this.docHeight * this.scale;
-
-    const hammer = new Hammer(this.container);
   }
 
   // TODO: this temporary crutch for Excel files should be documented

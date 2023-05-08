@@ -11,7 +11,6 @@ import {
 } from '@angular/core';
 import {FileDescription, FileUtil, PageModel} from "@groupdocs.examples.angular/common-components";
 import {ZoomService} from "@groupdocs.examples.angular/common-components";
-import * as Hammer from 'hammerjs';
 import {WindowService} from "@groupdocs.examples.angular/common-components";
 import * as jquery from 'jquery';
 import { NavigateService } from "@groupdocs.examples.angular/common-components";
@@ -76,7 +75,6 @@ export class RunPresentationComponent implements OnInit, AfterViewChecked, After
     this.doc = this._elementRef.nativeElement.children.item(0).children.item(0);
     // For current iteration we take .gd-document as a container
     this.container = this._elementRef.nativeElement;
-    const hammer = new Hammer(this.container);
   }
 
   ngAfterViewChecked(): void {
