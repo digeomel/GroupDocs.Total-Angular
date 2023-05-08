@@ -1,6 +1,6 @@
 {
   "name": "@groupdocs.examples.angular/editor",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "description": "Angular application that allows to edit documents supported by groupdocs libraries APIs",
   "license": "MIT",
   "publishConfig": {
@@ -11,7 +11,7 @@
     "@angular/core": "^15.2.8"
   },
   "dependencies": {
-    "@groupdocs.examples.angular/common-components": "^0.8.0",
+    "@groupdocs.examples.angular/common-components": "^0.15.0",
     "@fortawesome/angular-fontawesome": "^0.12.1",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
