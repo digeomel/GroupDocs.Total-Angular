@@ -11,7 +11,7 @@
     "@fortawesome/free-regular-svg-icons",
     "@fortawesome/free-solid-svg-icons",
     "@ngx-translate/core",
-    "ng-click-outside",
+    "ng-click-outside2",
     "jquery",
     "smoothscroll-polyfill"
   ]

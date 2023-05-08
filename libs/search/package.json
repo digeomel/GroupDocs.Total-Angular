@@ -17,7 +17,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@ngx-translate/core": "^14.0.0",
-    "ng-click-outside": "^9.0.1",
+    "ng-click-outside2": "^11.1.0",
     "jquery": "^3.6.4",
     "smoothscroll-polyfill": "^0.4.4",
     "tslib": "^2.0.0"

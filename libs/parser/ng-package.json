@@ -10,7 +10,7 @@
     "@fortawesome/fontawesome-svg-core",
     "@fortawesome/free-regular-svg-icons",
     "@fortawesome/free-solid-svg-icons",
-    "ng-click-outside",
+    "ng-click-outside2",
     "jquery",
     "smoothscroll-polyfill"
   ]

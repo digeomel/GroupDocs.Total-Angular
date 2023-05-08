@@ -62,7 +62,7 @@ import {
   DropDownItemsComponent,
   DropDownToggleComponent
 } from './drop-down/drop-down.component';
-import {ClickOutsideModule} from 'ng-click-outside';
+import {NgClickOutsideDirective} from 'ng-click-outside2';
 import {LeftSideBarComponent} from './left-side-bar/left-side-bar.component';
 import {TooltipDirective} from './tooltip.directive';
 import {AddDynamicComponentService} from "./add-dynamic-component.service";
@@ -111,9 +111,9 @@ const providers = [ConfigService,
 
 @NgModule({
   imports: [
-    CommonModule, 
-    FontAwesomeModule, 
-    ClickOutsideModule,
+    CommonModule,
+    FontAwesomeModule,
+    NgClickOutsideDirective,
     TranslateModule
   ],
   declarations: [

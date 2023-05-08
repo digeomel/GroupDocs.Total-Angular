@@ -23,7 +23,7 @@ import {DifferenceHighlightComponent} from './difference-highlight/difference-hi
 import {ResultDocumentComponent} from './result-document/result-document.component';
 import {DifferencesComponent} from './differences/differences.component';
 import {DifferencesService} from './differences.service';
-import {ClickOutsideModule} from 'ng-click-outside';
+import {NgClickOutsideDirective} from 'ng-click-outside2';
 import {TranslateModule} from '@ngx-translate/core';
 import {FormsModule} from '@angular/forms';
 
@@ -53,7 +53,7 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
     CommonComponentsModule,
     HttpClientModule,
     FontAwesomeModule,
-    ClickOutsideModule,
+    NgClickOutsideDirective,
     TranslateModule.forRoot(),
     FormsModule
   ],

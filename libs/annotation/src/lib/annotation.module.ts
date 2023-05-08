@@ -9,7 +9,7 @@ import {
 import {AnnotationConfigService} from "./annotation-config.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
-import {ClickOutsideModule} from "ng-click-outside";
+import {NgClickOutsideDirective} from "ng-click-outside2";
 import {AnnotationAppComponent} from './annotation-app.component';
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {fas} from "@fortawesome/free-solid-svg-icons";
@@ -42,7 +42,7 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
         CommonComponentsModule,
         HttpClientModule,
         FontAwesomeModule,
-        ClickOutsideModule,
+        NgClickOutsideDirective,
         TranslateModule.forRoot()
     ],
     providers: [

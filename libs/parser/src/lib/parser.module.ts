@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {
   CommonComponentsModule, ExceptionMessageService,
   ErrorInterceptorService, LoadingMaskInterceptorService, LoadingMaskService,
-  Api, ConfigService 
+  Api, ConfigService
 } from "@groupdocs.examples.angular/common-components";
 
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
@@ -11,7 +11,7 @@ import {library} from "@fortawesome/fontawesome-svg-core";
 import {fas} from "@fortawesome/free-solid-svg-icons";
 import {far} from "@fortawesome/free-regular-svg-icons";
 import { BrowserModule } from '@angular/platform-browser';
-import { ClickOutsideModule } from "ng-click-outside";
+import { NgClickOutsideDirective } from "ng-click-outside2";
 import { ParserAppComponent } from './parser-app.component';
 import { SurfaceComponent } from './surface/surface.component';
 import { FieldComponent } from './field/field.component';
@@ -50,7 +50,7 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
         BrowserModule,
         CommonComponentsModule,
         HttpClientModule,
-        ClickOutsideModule,
+        NgClickOutsideDirective,
         FontAwesomeModule
     ],
     exports: [
@@ -84,7 +84,7 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
         }
     ]
 })
-export class ParserModule { 
+export class ParserModule {
   constructor() {
     library.add(fas, far);
   }
