@@ -1,26 +1,26 @@
-import {BrowserModule} from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { APP_INITIALIZER, ModuleWithProviders, NgModule } from '@angular/core';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {EditorAppComponent} from './editor-app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
-import {CreateDocumentModalComponent} from './create.document-modal/create.document-modal.component';
-import {EditorService} from "./editor.service";
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import {
+  Api,
   CommonComponentsModule,
-  ErrorInterceptorService,
   ConfigService,
+  ErrorInterceptorService,
+  LoadingMaskInterceptorService,
   LoadingMaskService,
-  LoadingMaskInterceptorService, 
-  Api
 } from '@groupdocs.examples.angular/common-components';
-import {EditorConfigService} from "./editor-config.service";
-import {TranslateModule} from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { CreateDocumentModalComponent } from './create.document-modal/create.document-modal.component';
+import { EditorAppComponent } from './editor-app.component';
+import { EditorConfigService } from './editor-config.service';
+import { EditorService } from './editor.service';
 
 export function initializeApp(editorConfigService: EditorConfigService) {
-  const result =  () => editorConfigService.load();
+  const result = () => editorConfigService.load();
   return result;
 }
 
@@ -31,19 +31,18 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
 }
 
 @NgModule({
-  declarations :[EditorAppComponent,
-    CreateDocumentModalComponent],
+  declarations: [EditorAppComponent, CreateDocumentModalComponent],
   imports: [
-    BrowserModule,
+    CommonModule,
     CommonComponentsModule,
     HttpClientModule,
     FontAwesomeModule,
     TranslateModule.forRoot(),
   ],
-  exports : [
+  exports: [
     CreateDocumentModalComponent,
     EditorAppComponent,
-    CommonComponentsModule
+    CommonComponentsModule,
   ],
   providers: [
     EditorService,
@@ -53,30 +52,30 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
       provide: APP_INITIALIZER,
       useFactory: initializeApp,
       deps: [EditorConfigService],
-      multi: true
+      multi: true,
     },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptorService,
-      multi: true
+      multi: true,
     },
     LoadingMaskService,
     {
       provide: HTTP_INTERCEPTORS,
       useFactory: setupLoadingInterceptor,
       multi: true,
-      deps: [LoadingMaskService]
-    }
-  ]
+      deps: [LoadingMaskService],
+    },
+  ],
 })
 export class EditorModule {
-  constructor(){
-    library.add(fas,far);
+  constructor() {
+    library.add(fas, far);
   }
-  static forRoot(apiEndpoint : string): ModuleWithProviders<EditorModule> {
-    Api.DEFAULT_API_ENDPOINT = apiEndpoint
+  static forRoot(apiEndpoint: string): ModuleWithProviders<EditorModule> {
+    Api.DEFAULT_API_ENDPOINT = apiEndpoint;
     return {
-      ngModule: EditorModule
+      ngModule: EditorModule,
     };
   }
 }

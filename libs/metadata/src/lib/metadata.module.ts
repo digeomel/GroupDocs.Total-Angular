@@ -1,30 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { APP_INITIALIZER, ModuleWithProviders, NgModule } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { MetadataAppComponent } from './metadata-app.component';
+import { APP_INITIALIZER, ModuleWithProviders, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   Api,
   CommonComponentsModule,
-  ErrorInterceptorService, LoadingMaskInterceptorService,
-  LoadingMaskService
+  ConfigService,
+  ErrorInterceptorService,
+  LoadingMaskInterceptorService,
+  LoadingMaskService,
 } from '@groupdocs.examples.angular/common-components';
-import { MetadataService } from "./metadata.service";
-import { ConfigService } from "@groupdocs.examples.angular/common-components";
-import { MetadataConfigService } from "./metadata-config.service";
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AccordionComponent } from "./accordion/accordion.component";
-import { AccordionGroupComponent } from "./accordion/accordion-group/accordion-group.component";
-import { FormsModule } from '@angular/forms';
-import { AccordionService } from './accordion.service';
-import { GdIntegerDirective } from "./directives/gd-integer.directive";
-import { DpDatePickerModule } from 'ng2-date-picker';
-import { ConfirmModalComponent } from "./confirm-modal/confirm-modal.component";
-import { PreviewStatusComponent } from "./preview-status/preview-status.component";
 import { TranslateModule } from '@ngx-translate/core';
+import { DpDatePickerModule } from 'ng2-date-picker';
+import { AccordionService } from './accordion.service';
+import { AccordionGroupComponent } from './accordion/accordion-group/accordion-group.component';
+import { AccordionComponent } from './accordion/accordion.component';
+import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
+import { GdIntegerDirective } from './directives/gd-integer.directive';
+import { MetadataAppComponent } from './metadata-app.component';
+import { MetadataConfigService } from './metadata-config.service';
+import { MetadataService } from './metadata.service';
+import { PreviewStatusComponent } from './preview-status/preview-status.component';
 
 export function initializeApp(metadataConfigService: MetadataConfigService) {
-  const result =  () => metadataConfigService.load();
+  const result = () => metadataConfigService.load();
   return result;
 }
 
@@ -41,22 +41,22 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
     AccordionGroupComponent,
     GdIntegerDirective,
     ConfirmModalComponent,
-    PreviewStatusComponent
+    PreviewStatusComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     CommonComponentsModule,
     HttpClientModule,
     FontAwesomeModule,
     FormsModule,
     DpDatePickerModule,
-    TranslateModule.forRoot()
+    TranslateModule.forRoot(),
   ],
-  exports : [
+  exports: [
     MetadataAppComponent,
     CommonComponentsModule,
     AccordionComponent,
-    AccordionGroupComponent
+    AccordionGroupComponent,
   ],
   providers: [
     MetadataService,
@@ -67,27 +67,28 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptorService,
-      multi: true
+      multi: true,
     },
     {
       provide: APP_INITIALIZER,
       useFactory: initializeApp,
-      deps: [MetadataConfigService], multi: true
+      deps: [MetadataConfigService],
+      multi: true,
     },
     LoadingMaskService,
     {
       provide: HTTP_INTERCEPTORS,
       useFactory: setupLoadingInterceptor,
       multi: true,
-      deps: [LoadingMaskService]
-    }
-  ]
+      deps: [LoadingMaskService],
+    },
+  ],
 })
 export class MetadataModule {
-  static forRoot(apiEndpoint : string): ModuleWithProviders<MetadataModule> {
-    Api.DEFAULT_API_ENDPOINT = apiEndpoint
+  static forRoot(apiEndpoint: string): ModuleWithProviders<MetadataModule> {
+    Api.DEFAULT_API_ENDPOINT = apiEndpoint;
     return {
-      ngModule: MetadataModule
+      ngModule: MetadataModule,
     };
   }
 }

@@ -1,33 +1,35 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {APP_INITIALIZER, ModuleWithProviders, NgModule} from '@angular/core';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {ComparisonAppComponent} from './comparison-app.component';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {library} from '@fortawesome/fontawesome-svg-core';
-import {fas} from '@fortawesome/free-solid-svg-icons';
-import {far} from '@fortawesome/free-regular-svg-icons';
-import {ComparisonService} from "./comparison.service";
+import { CommonModule } from '@angular/common';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { APP_INITIALIZER, ModuleWithProviders, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import {
+  Api,
   CommonComponentsModule,
-  ErrorInterceptorService,
   ConfigService,
-  LoadingMaskService,
+  ErrorInterceptorService,
   LoadingMaskInterceptorService,
-  Api
-} from "@groupdocs.examples.angular/common-components";
-import {ComparisonConfigService} from "./comparison-config.service";
-import {AddFilePanelComponent} from './add-file-panel/add-file-panel.component';
-import {UploadFilePanelComponent} from './upload-file-panel/upload-file-panel.component';
-import {DifferenceComponent} from './difference/difference.component';
-import {DifferenceHighlightComponent} from './difference-highlight/difference-highlight.component';
-import {ResultDocumentComponent} from './result-document/result-document.component';
-import {DifferencesComponent} from './differences/differences.component';
-import {DifferencesService} from './differences.service';
-import {NgClickOutsideDirective} from 'ng-click-outside2';
-import {TranslateModule} from '@ngx-translate/core';
-import {FormsModule} from '@angular/forms';
+  LoadingMaskService,
+} from '@groupdocs.examples.angular/common-components';
+import { TranslateModule } from '@ngx-translate/core';
+import { NgClickOutsideDirective } from 'ng-click-outside2';
+import { AddFilePanelComponent } from './add-file-panel/add-file-panel.component';
+import { ComparisonAppComponent } from './comparison-app.component';
+import { ComparisonConfigService } from './comparison-config.service';
+import { ComparisonService } from './comparison.service';
+import { DifferenceHighlightComponent } from './difference-highlight/difference-highlight.component';
+import { DifferenceComponent } from './difference/difference.component';
+import { DifferencesService } from './differences.service';
+import { DifferencesComponent } from './differences/differences.component';
+import { ResultDocumentComponent } from './result-document/result-document.component';
+import { UploadFilePanelComponent } from './upload-file-panel/upload-file-panel.component';
 
-export function initializeApp(comparisonConfigService: ComparisonConfigService) {
+export function initializeApp(
+  comparisonConfigService: ComparisonConfigService
+) {
   const result = () => comparisonConfigService.load();
   return result;
 }
@@ -46,16 +48,16 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
     DifferenceComponent,
     DifferenceHighlightComponent,
     ResultDocumentComponent,
-    DifferencesComponent
+    DifferencesComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     CommonComponentsModule,
     HttpClientModule,
     FontAwesomeModule,
     NgClickOutsideDirective,
     TranslateModule.forRoot(),
-    FormsModule
+    FormsModule,
   ],
   exports: [
     CommonComponentsModule,
@@ -65,7 +67,7 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
     DifferenceComponent,
     DifferencesComponent,
     DifferenceHighlightComponent,
-    ResultDocumentComponent
+    ResultDocumentComponent,
   ],
   providers: [
     ComparisonService,
@@ -76,21 +78,21 @@ export function setupLoadingInterceptor(service: LoadingMaskService) {
       provide: APP_INITIALIZER,
       useFactory: initializeApp,
       deps: [ComparisonConfigService],
-      multi: true
+      multi: true,
     },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptorService,
-      multi: true
+      multi: true,
     },
     LoadingMaskService,
     {
       provide: HTTP_INTERCEPTORS,
       useFactory: setupLoadingInterceptor,
       multi: true,
-      deps: [LoadingMaskService]
-    }
-  ]
+      deps: [LoadingMaskService],
+    },
+  ],
 })
 export class ComparisonModule {
   constructor() {
@@ -100,7 +102,7 @@ export class ComparisonModule {
   static forRoot(apiEndpoint: string): ModuleWithProviders<ComparisonModule> {
     Api.DEFAULT_API_ENDPOINT = apiEndpoint;
     return {
-      ngModule: ComparisonModule
+      ngModule: ComparisonModule,
     };
   }
 }

@@ -1,23 +1,23 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {APP_INITIALIZER, ModuleWithProviders, NgModule} from '@angular/core';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {ViewerAppComponent} from './viewer-app.component';
+import { CommonModule } from '@angular/common';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { APP_INITIALIZER, ModuleWithProviders, NgModule } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   Api,
   CommonComponentsModule,
-  ErrorInterceptorService, 
+  ConfigService,
+  ErrorInterceptorService,
   LoadingMaskInterceptorService,
-  LoadingMaskService
+  LoadingMaskService,
 } from '@groupdocs.examples.angular/common-components';
-import {ViewerService} from "./viewer.service";
-import {ConfigService} from "@groupdocs.examples.angular/common-components";
-import {ViewerConfigService} from "./viewer-config.service";
-import {ExcelDocumentComponent} from './excel-document/excel-document.component';
-import {ExcelPageComponent} from './excel-page/excel-page.component';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {RunPresentationComponent} from './run-presentation/run-presentation.component';
-import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
-import {ViewerTranslateLoader} from './translation/viewer-translate.loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { ExcelDocumentComponent } from './excel-document/excel-document.component';
+import { ExcelPageComponent } from './excel-page/excel-page.component';
+import { RunPresentationComponent } from './run-presentation/run-presentation.component';
+import { ViewerTranslateLoader } from './translation/viewer-translate.loader';
+import { ViewerAppComponent } from './viewer-app.component';
+import { ViewerConfigService } from './viewer-config.service';
+import { ViewerService } from './viewer.service';
 
 export function initializeApp(viewerConfigService: ViewerConfigService) {
   const result = () => viewerConfigService.load();
@@ -40,25 +40,26 @@ export function translateLoaderFactory() {
     ViewerAppComponent,
     RunPresentationComponent,
     ExcelDocumentComponent,
-    ExcelPageComponent],
+    ExcelPageComponent,
+  ],
   imports: [
-    BrowserModule,
+    CommonModule,
     CommonComponentsModule,
     HttpClientModule,
     FontAwesomeModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: translateLoaderFactory
-      }
-    })
+        useFactory: translateLoaderFactory,
+      },
+    }),
   ],
-  exports : [
+  exports: [
     ViewerAppComponent,
     RunPresentationComponent,
     ExcelDocumentComponent,
     ExcelPageComponent,
-    CommonComponentsModule
+    CommonComponentsModule,
   ],
   providers: [
     ViewerService,
@@ -67,27 +68,28 @@ export function translateLoaderFactory() {
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptorService,
-      multi: true
+      multi: true,
     },
     {
       provide: APP_INITIALIZER,
       useFactory: initializeApp,
-      deps: [ViewerConfigService], multi: true
+      deps: [ViewerConfigService],
+      multi: true,
     },
     LoadingMaskService,
     {
       provide: HTTP_INTERCEPTORS,
       useFactory: setupLoadingInterceptor,
       multi: true,
-      deps: [LoadingMaskService]
-    }
-  ]
+      deps: [LoadingMaskService],
+    },
+  ],
 })
 export class ViewerModule {
-  static forRoot(apiEndpoint : string): ModuleWithProviders<ViewerModule> {
-    Api.DEFAULT_API_ENDPOINT = apiEndpoint
+  static forRoot(apiEndpoint: string): ModuleWithProviders<ViewerModule> {
+    Api.DEFAULT_API_ENDPOINT = apiEndpoint;
     return {
-      ngModule: ViewerModule
+      ngModule: ViewerModule,
     };
   }
 }
